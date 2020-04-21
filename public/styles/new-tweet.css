@@ -1,0 +1,18 @@
+form textarea {
+  border: none;
+  border-bottom: solid;
+  width: 100%;
+  background-color: #f4f1ec;
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee';
+}
+
+form button {
+  font-family: 'Bungee';
+  background-color: midnightblue;
+  color: #f4f1ec;
+  padding: 0.2em 0.5em;
+}
