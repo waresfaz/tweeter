@@ -9,16 +9,14 @@ $(document).ready(function() {
     let charsLeft = max - input;
     console.log(input, charsLeft);
 
-    let charCounter = document.querySelector(this.parentNode)
-    console.log(charCounter)
 
     $('.counter').text(charsLeft)
 
-    // if (charsLeft < 0) {
-    //   $('.counter').addClass('red')
-    // } else {
-    //   $('.counter').removeClass('red')
-    // }
+    if (charsLeft < 0) {
+      $('.counter').addClass('red')
+    } else {
+      $('.counter').removeClass('red')
+    }
 
   })
 });
