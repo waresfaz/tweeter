@@ -7,6 +7,7 @@
 $(document).ready(function() {
 
   const loadTweets = function() {
+
     $.ajax({
       method: "GET",
       url: "/tweets",
@@ -18,8 +19,18 @@ $(document).ready(function() {
   }
   loadTweets();
 
+    
+
   $("#tweet-button").submit(function(event) {
     event.preventDefault()
+
+    if ($('.new-tweet textarea').val().length > 140) {
+      alert("too many chars");
+      return false;
+    } if ($('.new-tweet textarea').val() === "") {
+      alert("tweet can't be empty");
+    } 
+
     // console.log("testing that this submit is working")
     $.ajax({
       method: "POST",
@@ -27,8 +38,9 @@ $(document).ready(function() {
       data: $("#tweet-button").serialize()
     })
       .then(function() {
-        console.log("tweet successfully submitted");
-        $
+        loadTweets();
+        $('.new-tweet textarea').val() = "";
+        console.log($('.new-tweet textarea').val())
       })
   })
 
@@ -62,4 +74,4 @@ const renderTweets = function(tweets) {
 
 renderTweets(data);
 
-}) 
+})
