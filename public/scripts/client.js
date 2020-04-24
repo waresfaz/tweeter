@@ -6,6 +6,12 @@
 
 $(document).ready(function() {
 
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }  
+
   const loadTweets = function() {
 
     $.ajax({
@@ -19,16 +25,23 @@ $(document).ready(function() {
   }
   loadTweets();
 
-    
+
+  $('.error-message').hide();
 
   $("#tweet-button").submit(function(event) {
     event.preventDefault()
 
     if ($('.new-tweet textarea').val().length > 140) {
-      alert("too many chars");
+      $('.error-message').slideDown();
+      $('.error-message').show();
+      // $('.error-message').val() === "too many chars";
+      // alert("too many chars");
       return false;
     } if ($('.new-tweet textarea').val() === "") {
-      alert("tweet can't be empty");
+      $('.error-message').slideDown();
+      $('.error-message').show();
+      // $('.error-message').val("empty tweet not allowed");
+      // alert("tweet can't be empty");
     } 
 
     // console.log("testing that this submit is working")
@@ -38,8 +51,9 @@ $(document).ready(function() {
       data: $("#tweet-button").serialize()
     })
       .then(function() {
+        $("#tweet-container").empty()
         loadTweets();
-        $('.new-tweet textarea').val() = "";
+        $('.error-message').hide();
         console.log($('.new-tweet textarea').val())
       })
   })
@@ -53,7 +67,7 @@ $(document).ready(function() {
       <p class="handle">${tweetInput.user.handle}</p>
     </header>
     
-    <p class="submission">${tweetInput.content.text}</p>
+    <p class="submission">${escape(tweetInput.content.text)}</p>
 
     <footer>
       <p class="timestamp">Potsed 10 days ago</p>

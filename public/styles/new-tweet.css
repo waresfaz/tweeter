@@ -20,3 +20,9 @@ form button {
 .red {
   color: red;
 }
+
+.error-message {
+  /* visibility: hidden;
+  display: none; */
+  color: red;
+}
