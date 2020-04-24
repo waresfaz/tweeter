@@ -55,7 +55,7 @@
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form method="POST" action="/tweets" id="tweet-button">
           <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <button type="submit">Tweet</button>
@@ -64,24 +64,7 @@
       </section>
 
       <section id="tweet-container">
-        <article>
 
-          <header>
-            <img class="profile-picture" src="images/profile-hex.png">
-            <p class="display-name">User display name</p>
-            <p class="handle">@user_handle</p>
-          </header>
-          
-          <p class="submission">Despite the negative press covfefe</p>
-
-          <footer>
-            <p class="timestamp">Potsed 10 days ago</p>
-            <a class="flag-icon">Flag</a>
-            <a class="retweet-icon">Retweet</a>
-            <a class="like-icon">Like</a>
-          </footer>
-
-        </article>
       </section>
       
     </main>
