@@ -1,0 +1,25 @@
+@media only screen and (min-width: 1024px) {
+
+
+  .main-picture {
+    width: 100%;
+    height: auto;
+  }
+
+  header.main-header {
+
+    float: left;
+    width: 25%;
+    content: inherit;
+  }
+  
+  header.main-name {
+    width: 100%;
+    height: auto;
+  }
+
+  .container {
+    width: 75%;
+    float: right;
+  }
+}
