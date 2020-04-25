@@ -52,15 +52,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      <!-- <p class="tweet"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dui nulla, faucibus et lobortis eu, aliquet et ex. Donec volutpat lacus odio, at ultrices erat tempor sit amet. Suspendisse eu vestibulum est, ac laoreet est. Mauris dui diam, ultrices eu risus ut, commodo consectetur nulla. Aliquam ut velit nibh. Morbi euismod congue massa, et lobortis odio imperdiet at. Vivamus tristique magna arcu, at volutpat dui hendrerit cursus. Quisque accumsan nibh non libero vestibulum scelerisque. Mauris tincidunt libero vel consequat semper. Mauris laoreet blandit arcu in imperdiet.
-        Nunc id aliquam magna.
-      </p> -->
-
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
+        
         <a class="error-message">ERROR: Tweet must contain between 1-140 characters</a>
         <form method="POST" action="/tweets" id="tweet-button">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>

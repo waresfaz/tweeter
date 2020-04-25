@@ -29,8 +29,6 @@ form button {
 }
 
 .error-message {
-  /* visibility: hidden;
-  display: none; */
   display: flex;
   color: red;
   justify-content: center;
