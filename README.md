@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of tweeter wide view"](https://github.com/waresfaz/tweeter/blob/master/docs/tweeter-wide.png)
+
+!["Screen shot of tweeter regular view"](https://github.com/waresfaz/tweeter/blob/master/docs/tweeter.png)
