@@ -1,8 +1,14 @@
+.new-tweet {
+  width: 90%;
+  padding: 5%;
+}
+
 form textarea {
   border: none;
   border-bottom: solid;
   width: 100%;
   background-color: #f4f1ec;
+  padding-top: 10%;
 }
 
 .counter {
@@ -11,6 +17,7 @@ form textarea {
 }
 
 form button {
+  float: left;
   font-family: 'Bungee';
   background-color: midnightblue;
   color: #f4f1ec;
@@ -24,5 +31,7 @@ form button {
 .error-message {
   /* visibility: hidden;
   display: none; */
+  display: flex;
   color: red;
+  justify-content: center;
 }

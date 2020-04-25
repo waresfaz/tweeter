@@ -59,7 +59,7 @@ $(document).ready(function() {
   })
 
   const createTweetElement = (tweetInput) => {
-    return `<article class=""tweet">
+    return `<article class="tweet">
 
     <header>
       <img class="profile-picture" src=${tweetInput.user.avatars}>
@@ -71,9 +71,11 @@ $(document).ready(function() {
 
     <footer>
       <p class="timestamp">Potsed 10 days ago</p>
-      <a class="flag-icon">Flag</a>
-      <a class="retweet-icon">Retweet</a>
-      <a class="like-icon">Like</a>
+        <div class="icons">
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fa fa-heart"></i>
+        </div>
     </footer>
 
   </article>`
