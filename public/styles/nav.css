@@ -14,3 +14,10 @@ nav {
 nav span {
   font-family: 'Bungee';
 }
+
+.write-new-tweet-button {
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-family: 'Bungee';
+}

@@ -7,7 +7,6 @@ $(document).ready(function() {
     const input = $(this).val().length;
     let max = 140;
     let charsLeft = max - input;
-    console.log(input, charsLeft);
 
 
     $('.counter').text(charsLeft)

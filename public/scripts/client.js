@@ -7,6 +7,7 @@ $(document).ready(function() {
     return div.innerHTML;
   }  
 
+  //loads and renders tweets from /tweets 
   const loadTweets = function() {
 
     $.ajax({
@@ -20,17 +21,27 @@ $(document).ready(function() {
   }
   loadTweets();
 
+  // hides new tweet input box
+  $('.new-tweet').hide();
+  //triggers once "write new tweet" button is clicked from nav bar to display new tweet input box
+  $('.write-new-tweet-button').click(function(event) {
+    $('.new-tweet').slideDown();
+    $('.new-tweet').show();
+  })
 
+
+  // hides error message for invalud tweet as default
   $('.error-message').hide();
-
+  //triggers once button is clicked to submit a new tweet
   $("#tweet-button").submit(function(event) {
     event.preventDefault()
 
+    // if user attempts to submit tweet that is more than limit or that is empty, shows error
     if ($('.new-tweet textarea').val().length > 140) {
       $('.error-message').slideDown();
       $('.error-message').show();
       return false;
-    } if ($('.new-tweet textarea').val() === "") {
+    } if (!$('.new-tweet textarea').val()) {
       $('.error-message').slideDown();
       $('.error-message').show();
     } 
@@ -42,15 +53,17 @@ $(document).ready(function() {
     })
     // when new tweet is submitted, clears previously displayed tweets so there are no repeats
       .then(function() {
-        $("#tweet-container").empty()
         loadTweets();
+        $("#tweet-container").empty()
         $('.error-message').hide();
+        // resets counter and empties text input box after tweet is submitted
         $(".counter").empty();
         $(".counter").append("140");
-        console.log($('.new-tweet textarea').val())
+        $("#tweet-text").val('');
       })
   })
 
+  // creates a new tweet according to the html structure below
   const createTweetElement = (tweetInput) => {
     return `<article class="tweet">
 
@@ -74,13 +87,13 @@ $(document).ready(function() {
   </article>`
   }
 
-
-const renderTweets = function(tweets) {
-  for (let tweet of tweets) {
-    $("#tweet-container").append(createTweetElement(tweet));
+  // renders tweets prepending most recently submitted tweet at top of tweet container
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      $("#tweet-container").prepend(createTweetElement(tweet));
+    }
   }
-}
 
-renderTweets(data);
+  renderTweets(data);
 
 })
