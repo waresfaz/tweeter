@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // saftey feature, escapes untrusted text input
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -39,10 +40,13 @@ $(document).ready(function() {
       url: "/tweets",
       data: $("#tweet-button").serialize()
     })
+    // when new tweet is submitted, clears previously displayed tweets so there are no repeats
       .then(function() {
         $("#tweet-container").empty()
         loadTweets();
         $('.error-message').hide();
+        $(".counter").empty();
+        $(".counter").append("140");
         console.log($('.new-tweet textarea').val())
       })
   })
